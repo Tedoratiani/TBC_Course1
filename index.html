@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="ka">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="TECHNOVA — თანამედროვე ტექნიკის მაღაზია. შეიძინეთ პრემიუმ ლეპტოპები, სმარტფონები, ყურსასმენები და სხვა ტექნიკა საუკეთესო ფასად." />
+  <meta name="keywords" content="ტექნიკა, ლეპტოპი, სმარტფონი, TECHNOVA, ელექტრონიკა, გაჯეტები" />
+  <meta name="author" content="TECHNOVA" />
+  <meta property="og:title" content="TECHNOVA — ტექნოლოგია, რომელიც შენს ცხოვრებას ცვლის" />
+  <meta property="og:description"
+    content="პრემიუმ ტექნიკის მაღაზია — სწრაფი მიწოდება, უსაფრთხო გადახდა, გარანტირებული ხარისხი." />
+  <meta property="og:type" content="website" />
+  <title>TECHNOVA — პრემიუმ ტექნიკის მაღაზია</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- Background Canvas -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <!-- ========== NAVIGATION ========== -->
+  <header class="navbar" id="navbar" role="banner">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo" id="nav-logo-link" aria-label="TECHNOVA მთავარი გვერდი">
+        <span class="logo-icon" aria-hidden="true">&#x2B21;</span>
+        <span class="logo-text">TECH<span class="logo-accent">NOVA</span></span>
+      </a>
+
+      <nav class="nav-links" id="nav-links" role="navigation" aria-label="მთავარი ნავიგაცია">
+        <a href="#home" class="nav-link active" id="nav-home">მთავარი</a>
+        <a href="#about" class="nav-link" id="nav-about">ჩვენ შესახებ</a>
+        <a href="#products" class="nav-link" id="nav-products">პროდუქტები</a>
+        <a href="#features" class="nav-link" id="nav-features">უპირატესობები</a>
+        <a href="#contact" class="nav-link" id="nav-contact">კონტაქტი</a>
+      </nav>
+
+      <a href="#products" class="btn btn-primary nav-cta" id="nav-buy-btn">
+        <span>შეიძინე ახლა</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+          aria-hidden="true">
+          <path d="M5 12h14M12 5l7 7-7 7" />
+        </svg>
+      </a>
+
+      <button class="hamburger" id="hamburger-btn" aria-label="მენიუს გახსნა" aria-expanded="false"
+        aria-controls="nav-links">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="home" aria-label="Hero სექცია">
+      <div class="hero-container">
+        <div class="hero-content" data-animate="fade-up">
+          <div class="hero-badge">
+            <span class="badge-dot" aria-hidden="true"></span>
+            <span>ახალი კოლექცია 2026</span>
+          </div>
+          <h1 class="hero-title">
+            ტექნოლოგია,<br />
+            <span class="gradient-text">რომელიც შენს</span><br />
+            ცხოვრებას ცვლის.
+          </h1>
+          <p class="hero-desc">
+            აღმოაჩინე პრემიუმ ტექნიკის სამყარო — ყველაზე თანამედროვე გაჯეტები,
+            ექსპერტული კონსულტაცია და სწრაფი მიწოდება მთელ საქართველოში.
+          </p>
+          <div class="hero-actions">
+            <a href="#products" class="btn btn-primary btn-lg" id="hero-buy-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                aria-hidden="true">
+                <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <path d="M16 10a4 4 0 01-8 0" />
+              </svg>
+              შეიძინე ახლა
+            </a>
+            <a href="#products" class="btn btn-ghost btn-lg" id="hero-view-btn">
+              პროდუქტების ნახვა
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                aria-hidden="true">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+            </a>
+          </div>
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <span class="stat-number" data-count="10000">0</span>
+              <span class="stat-suffix">+</span>
+              <span class="stat-label">მომხმარებელი</span>
+            </div>
+            <div class="stat-divider" aria-hidden="true"></div>
+            <div class="hero-stat">
+              <span class="stat-number" data-count="500">0</span>
+              <span class="stat-suffix">+</span>
+              <span class="stat-label">პროდუქტი</span>
+            </div>
+            <div class="stat-divider" aria-hidden="true"></div>
+            <div class="hero-stat">
+              <span class="stat-number" data-count="4">0</span>
+              <span class="stat-suffix">.9&#9733;</span>
+              <span class="stat-label">რეიტინგი</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual" data-animate="fade-left" aria-hidden="true">
+          <div class="hero-glow-ring glow-ring-1"></div>
+          <div class="hero-glow-ring glow-ring-2"></div>
+          <div class="hero-image-wrapper">
+            <img src="images/hero_tech.jpg" alt="TECHNOVA — პრემიუმ ტექნიკა" class="hero-img" width="640" height="480"
+              loading="eager" />
+            <div class="hero-img-overlay"></div>
+          </div>
+          <div class="float-badge float-badge-1">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2"
+              aria-hidden="true">
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+              <polyline points="22 4 12 14.01 9 11.01" />
+            </svg>
+            <span>უახლესი მოდელი</span>
+          </div>
+          <div class="float-badge float-badge-2">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"
+              aria-hidden="true">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+            <span>პრემიუმ ხარისხი</span>
+          </div>
+          <div class="float-badge float-badge-3">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2"
+              aria-hidden="true">
+              <rect x="1" y="3" width="15" height="13" />
+              <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+              <circle cx="5.5" cy="18.5" r="2.5" />
+              <circle cx="18.5" cy="18.5" r="2.5" />
+            </svg>
+            <span>სწრაფი მიწოდება</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-indicator" aria-label="გადაახვიე ქვემოთ">
+        <div class="scroll-dot"></div>
+      </div>
+    </section>
+
+    <!-- ========== ABOUT ========== -->
+    <section class="about" id="about" aria-labelledby="about-heading">
+      <div class="section-container">
+        <div class="section-header" data-animate="fade-up">
+          <span class="section-tag">ჩვენ შესახებ</span>
+          <h2 class="section-title" id="about-heading">
+            ვინ ვართ <span class="gradient-text">ჩვენ?</span>
+          </h2>
+          <p class="section-desc">
+            TECHNOVA — ეს არის სივრცე, სადაც ტექნოლოგია ხვდება ხარისხს.
+            ჩვენ ვჯერვართ, რომ სწორი ტექნიკა შეუძლია შეცვალოს ადამიანის ყოველდღიური ცხოვრება.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text" data-animate="fade-right">
+            <p class="about-paragraph">
+              2018 წლიდან ჩვენ ვამარაგებთ ათასობით მომხმარებელს საქართველოში
+              თანამედროვე, ხარისხიანი ელექტრონული პროდუქტებით. ჩვენი გუნდი შედგება
+              ტექნოლოგიის ვნებით მოსული ექსპერტებისგან.
+            </p>
+            <p class="about-paragraph">
+              ჩვენი მიზანია — თქვენ ყოველთვის ჰქონდეთ წვდომა საუკეთესო
+              ტექნოლოგიებზე, კონკურენტულ ფასად და სანდო სერვისით.
+            </p>
+            <div class="about-features-list">
+              <div class="about-feature-item">
+                <span class="feature-check" aria-hidden="true">&#10003;</span>
+                <span>ოფიციალური დილერი 20+ ბრენდის</span>
+              </div>
+              <div class="about-feature-item">
+                <span class="feature-check" aria-hidden="true">&#10003;</span>
+                <span>გარანტია და სერვის ცენტრი</span>
+              </div>
+              <div class="about-feature-item">
+                <span class="feature-check" aria-hidden="true">&#10003;</span>
+                <span>ინდივიდუალური კონსულტაცია</span>
+              </div>
+              <div class="about-feature-item">
+                <span class="feature-check" aria-hidden="true">&#10003;</span>
+                <span>განვადება 0%-იანი პროცენტით</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-stats" data-animate="fade-left">
+            <article class="stat-card" aria-label="10,000+ მომხმარებელი">
+              <div class="stat-card-icon" aria-hidden="true">&#128101;</div>
+              <div class="stat-card-number counter" data-target="10000">0</div>
+              <div class="stat-card-suffix">+</div>
+              <div class="stat-card-label">კმაყოფილი მომხმარებელი</div>
+            </article>
+            <article class="stat-card" aria-label="500+ პროდუქტი">
+              <div class="stat-card-icon" aria-hidden="true">&#128230;</div>
+              <div class="stat-card-number counter" data-target="500">0</div>
+              <div class="stat-card-suffix">+</div>
+              <div class="stat-card-label">პროდუქტი კატალოგში</div>
+            </article>
+            <article class="stat-card" aria-label="24/7 მხარდაჭერა">
+              <div class="stat-card-icon" aria-hidden="true">&#128737;&#65039;</div>
+              <div class="stat-card-number">24</div>
+              <div class="stat-card-suffix">/7</div>
+              <div class="stat-card-label">ტექნიკური მხარდაჭერა</div>
+            </article>
+            <article class="stat-card" aria-label="8+ წლის გამოცდილება">
+              <div class="stat-card-icon" aria-hidden="true">&#127942;</div>
+              <div class="stat-card-number counter" data-target="8">0</div>
+              <div class="stat-card-suffix">+</div>
+              <div class="stat-card-label">წლის გამოცდილება</div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PRODUCTS ========== -->
+    <section class="products" id="products" aria-labelledby="products-heading">
+      <div class="section-container">
+        <div class="section-header" data-animate="fade-up">
+          <span class="section-tag">კატალოგი</span>
+          <h2 class="section-title" id="products-heading">
+            პოპულარული <span class="gradient-text">პროდუქტები</span>
+          </h2>
+          <p class="section-desc">
+            ჩვენი ყველაზე პოპულარული პროდუქტები — ტექნოლოგია, რომელსაც ენდობა ათასობით მომხმარებელი.
+          </p>
+        </div>
+
+        <div class="products-grid">
+
+          <article class="product-card" data-animate="fade-up" id="product-laptop">
+            <div class="product-badge">ბესთსელერი</div>
+            <div class="product-image-wrap">
+              <div class="product-icon-display" aria-hidden="true">&#128187;</div>
+              <div class="product-glow" aria-hidden="true"></div>
+            </div>
+            <div class="product-info">
+              <div class="product-category">ლეპტოპი</div>
+              <h3 class="product-name">UltraBook Pro X15</h3>
+              <p class="product-desc">Intel Core i9, 32GB RAM, 2TB SSD, OLED 4K ეკრანი</p>
+              <div class="product-rating">
+                <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <span class="rating-count">(412 შეფასება)</span>
+              </div>
+              <div class="product-footer">
+                <div class="product-price">
+                  <span class="price-old">&#x20BE;4,199</span>
+                  <span class="price-new">&#x20BE;3,499</span>
+                </div>
+                <button class="btn btn-primary btn-sm product-btn" id="add-laptop-btn" data-product="UltraBook Pro X15">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    aria-hidden="true">
+                    <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+                    <line x1="3" y1="6" x2="21" y2="6" />
+                    <path d="M16 10a4 4 0 01-8 0" />
+                  </svg>
+                  შეძენა
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card featured" data-animate="fade-up" id="product-phone">
+            <div class="product-badge featured-badge">ახალი</div>
+            <div class="product-image-wrap">
+              <div class="product-icon-display" aria-hidden="true">&#128241;</div>
+              <div class="product-glow" aria-hidden="true"></div>
+            </div>
+            <div class="product-info">
+              <div class="product-category">სმარტფონი</div>
+              <h3 class="product-name">Nova Phone 15 Ultra</h3>
+              <p class="product-desc">Snapdragon 8 Gen 3, 12GB RAM, 256GB, 200MP კამერა</p>
+              <div class="product-rating">
+                <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <span class="rating-count">(287 შეფასება)</span>
+              </div>
+              <div class="product-footer">
+                <div class="product-price">
+                  <span class="price-old">&#x20BE;2,299</span>
+                  <span class="price-new">&#x20BE;1,899</span>
+                </div>
+                <button class="btn btn-primary btn-sm product-btn" id="add-phone-btn"
+                  data-product="Nova Phone 15 Ultra">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    aria-hidden="true">
+                    <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+                    <line x1="3" y1="6" x2="21" y2="6" />
+                    <path d="M16 10a4 4 0 01-8 0" />
+                  </svg>
+                  შეძენა
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-animate="fade-up" id="product-headphones">
+            <div class="product-badge sale-badge">-25%</div>
+            <div class="product-image-wrap">
+              <div class="product-icon-display" aria-hidden="true">&#127911;</div>
+              <div class="product-glow" aria-hidden="true"></div>
+            </div>
+            <div class="product-info">
+              <div class="product-category">ყურსასმენები</div>
+              <h3 class="product-name">SoundPro Elite ANC</h3>
+              <p class="product-desc">Active Noise Cancelling, 40h ბატარეა, Hi-Res Audio</p>
+              <div class="product-rating">
+                <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <span class="rating-count">(594 შეფასება)</span>
+              </div>
+              <div class="product-footer">
+                <div class="product-price">
+                  <span class="price-old">&#x20BE;699</span>
+                  <span class="price-new">&#x20BE;524</span>
+                </div>
+                <button class="btn btn-primary btn-sm product-btn" id="add-headphones-btn"
+                  data-product="SoundPro Elite ANC">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    aria-hidden="true">
+                    <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+                    <line x1="3" y1="6" x2="21" y2="6" />
+                    <path d="M16 10a4 4 0 01-8 0" />
+                  </svg>
+                  შეძენა
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-animate="fade-up" id="product-tablet">
+            <div class="product-image-wrap">
+              <div class="product-icon-display" aria-hidden="true">&#9001;&#9002;</div>
+              <div class="product-glow" aria-hidden="true"></div>
+            </div>
+            <div class="product-info">
+              <div class="product-category">ტაბლეტი</div>
+              <h3 class="product-name">TabMax Pro 12</h3>
+              <p class="product-desc">M3 Chip, 12.9" Liquid Retina, Apple Pencil მხარდაჭერა</p>
+              <div class="product-rating">
+                <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                <span class="rating-count">(321 შეფასება)</span>
+              </div>
+              <div class="product-footer">
+                <div class="product-price">
+                  <span class="price-new">&#x20BE;2,799</span>
+                </div>
+                <button class="btn btn-primary btn-sm product-btn" id="add-tablet-btn" data-product="TabMax Pro 12">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    aria-hidden="true">
+                    <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+                    <line x1="3" y1="6" x2="21" y2="6" />
+                    <path d="M16 10a4 4 0 01-8 0" />
+                  </svg>
+                  შეძენა
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-animate="fade-up" id="product-watch">
+            <div class="product-badge">ტრენდი</div>
+            <div class="product-image-wrap">
+              <div class="product-icon-display" aria-hidden="true">&#8987;</div>
+              <div class="product-glow" aria-hidden="true"></div>
+            </div>
+            <div class="product-info">
+              <div class="product-category">სმარტ საათი</div>
+              <h3 class="product-name">SmartWatch Nova X</h3>
+              <p class="product-desc">AMOLED, GPS, ჯანმრთელობის მონიტორი, 7 დღის ბატარეა</p>
+              <div class="product-rating">
+                <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                <span class="rating-count">(198 შეფასება)</span>
+              </div>
+              <div class="product-footer">
+                <div class="product-price">
+                  <span class="price-old">&#x20BE;499</span>
+                  <span class="price-new">&#x20BE;379</span>
+                </div>
+                <button class="btn btn-primary btn-sm product-btn" id="add-watch-btn" data-product="SmartWatch Nova X">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    aria-hidden="true">
+                    <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+                    <line x1="3" y1="6" x2="21" y2="6" />
+                    <path d="M16 10a4 4 0 01-8 0" />
+                  </svg>
+                  შეძენა
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-animate="fade-up" id="product-camera">
+            <div class="product-badge sale-badge">-15%</div>
+            <div class="product-image-wrap">
+              <div class="product-icon-display" aria-hidden="true">&#128247;</div>
+              <div class="product-glow" aria-hidden="true"></div>
+            </div>
+            <div class="product-info">
+              <div class="product-category">კამერა</div>
+              <h3 class="product-name">PhotoNova 6K Pro</h3>
+              <p class="product-desc">6K Video, 45MP Sensor, OIS, Full-Frame, WiFi/BT</p>
+              <div class="product-rating">
+                <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <span class="rating-count">(156 შეფასება)</span>
+              </div>
+              <div class="product-footer">
+                <div class="product-price">
+                  <span class="price-old">&#x20BE;5,499</span>
+                  <span class="price-new">&#x20BE;4,674</span>
+                </div>
+                <button class="btn btn-primary btn-sm product-btn" id="add-camera-btn" data-product="PhotoNova 6K Pro">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    aria-hidden="true">
+                    <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+                    <line x1="3" y1="6" x2="21" y2="6" />
+                    <path d="M16 10a4 4 0 01-8 0" />
+                  </svg>
+                  შეძენა
+                </button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="products-cta" data-animate="fade-up">
+          <a href="#contact" class="btn btn-ghost btn-lg" id="view-all-btn">
+            ყველა პროდუქტის ნახვა
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              aria-hidden="true">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FEATURES ========== -->
+    <section class="features" id="features" aria-labelledby="features-heading">
+      <div class="section-container">
+        <div class="section-header" data-animate="fade-up">
+          <span class="section-tag">უპირატესობები</span>
+          <h2 class="section-title" id="features-heading">
+            რატომ <span class="gradient-text">TECHNOVA?</span>
+          </h2>
+          <p class="section-desc">
+            ჩვენ გვსურს, რომ თქვენი გამოცდილება ყოველ ნაბიჯზე იყოს სრულყოფილი.
+          </p>
+        </div>
+
+        <div class="features-grid">
+
+          <article class="feature-card" data-animate="fade-up" id="feature-delivery">
+            <div class="feature-icon-wrap" aria-hidden="true">
+              <div class="feature-icon-glow"></div>
+              <svg class="feature-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.5">
+                <rect x="1" y="3" width="15" height="13" />
+                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+                <circle cx="5.5" cy="18.5" r="2.5" />
+                <circle cx="18.5" cy="18.5" r="2.5" />
+              </svg>
+            </div>
+            <h3 class="feature-title">სწრაფი მიწოდება</h3>
+            <p class="feature-desc">
+              თბილისში — 24 საათში, რეგიონებში — 48 საათში. ყველა შეკვეთა
+              თრექინგის სისტემით. გარანტირებული, სწრაფი და საიმედო.
+            </p>
+            <div class="feature-highlight">
+              <span class="highlight-dot" aria-hidden="true"></span>
+              <span>24 საათიანი მიწოდება</span>
+            </div>
+          </article>
+
+          <article class="feature-card featured-feature" data-animate="fade-up" id="feature-payment">
+            <div class="feature-icon-wrap" aria-hidden="true">
+              <div class="feature-icon-glow"></div>
+              <svg class="feature-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.5">
+                <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
+                <line x1="1" y1="10" x2="23" y2="10" />
+              </svg>
+            </div>
+            <h3 class="feature-title">უსაფრთხო გადახდა</h3>
+            <p class="feature-desc">
+              SSL დაცული გადახდა, 256-bit დაშიფვრა. ვიზა, მასტერქარდი,
+              ამერიქან ექსპრეს და ონლაინ ბანკინგი. სრული უსაფრთხოება.
+            </p>
+            <div class="feature-highlight">
+              <span class="highlight-dot" aria-hidden="true"></span>
+              <span>256-bit SSL დაცვა</span>
+            </div>
+          </article>
+
+          <article class="feature-card" data-animate="fade-up" id="feature-quality">
+            <div class="feature-icon-wrap" aria-hidden="true">
+              <div class="feature-icon-glow"></div>
+              <svg class="feature-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.5">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+            </div>
+            <h3 class="feature-title">გარანტირებული ხარისხი</h3>
+            <p class="feature-desc">
+              ყველა პროდუქტი ოფიციალური მწარმოებლის გარანტიით.
+              სერვის ცენტრი და 30 დღიანი დაბრუნების პოლიტიკა.
+            </p>
+            <div class="feature-highlight">
+              <span class="highlight-dot" aria-hidden="true"></span>
+              <span>2 წლიანი გარანტია</span>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="trust-bar" data-animate="fade-up">
+          <p class="trust-label">ოფიციალური პარტნიორები:</p>
+          <div class="trust-logos">
+            <span class="trust-logo-item">&#127822; Apple</span>
+            <span class="trust-logo-item">&#128225; Samsung</span>
+            <span class="trust-logo-item">&#127918; Sony</span>
+            <span class="trust-logo-item">&#128187; Dell</span>
+            <span class="trust-logo-item">&#128444;&#65039; LG</span>
+            <span class="trust-logo-item">&#9889; Asus</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CONTACT ========== -->
+    <section class="contact" id="contact" aria-labelledby="contact-heading">
+      <div class="section-container">
+        <div class="contact-grid">
+
+          <div class="contact-info" data-animate="fade-right">
+            <span class="section-tag">კონტაქტი</span>
+            <h2 class="section-title" id="contact-heading">
+              დაგვიკავშირდი <span class="gradient-text">ახლავე</span>
+            </h2>
+            <p class="section-desc" style="text-align:left;">
+              გაქვს კითხვები? ჩვენი გუნდი მზადაა დაგეხმაროს ნებისმიერ
+              დროს. გამოგვიგზავნე შეტყობინება ან დაგვირეკე.
+            </p>
+
+            <div class="contact-details">
+              <div class="contact-detail-item">
+                <div class="contact-detail-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="detail-label">მისამართი</div>
+                  <div class="detail-value">თბილისი, რუსთაველის გამზ. 42</div>
+                </div>
+              </div>
+              <div class="contact-detail-item">
+                <div class="contact-detail-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path
+                      d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.09-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="detail-label">ტელეფონი</div>
+                  <div class="detail-value">+995 32 222 00 00</div>
+                </div>
+              </div>
+              <div class="contact-detail-item">
+                <div class="contact-detail-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                    <polyline points="22,6 12,13 2,6" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="detail-label">ელფოსტა</div>
+                  <div class="detail-value">hello@technova.ge</div>
+                </div>
+              </div>
+              <div class="contact-detail-item">
+                <div class="contact-detail-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="detail-label">სამუშაო საათები</div>
+                  <div class="detail-value">ყოველდღე 10:00 — 22:00</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-wrap" data-animate="fade-left">
+            <form class="contact-form" id="contact-form" novalidate aria-label="საკონტაქტო ფორმა">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="contact-name" class="form-label">სახელი</label>
+                  <input type="text" id="contact-name" name="name" class="form-input" placeholder="თქვენი სახელი"
+                    autocomplete="given-name" />
+                  <span class="form-error" id="name-error" role="alert" aria-live="polite"></span>
+                </div>
+                <div class="form-group">
+                  <label for="contact-email" class="form-label">ელფოსტა</label>
+                  <input type="email" id="contact-email" name="email" class="form-input" placeholder="თქვენი@ელფოსტა.ge"
+                    autocomplete="email" />
+                  <span class="form-error" id="email-error" role="alert" aria-live="polite"></span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="contact-subject" class="form-label">თემა</label>
+                <input type="text" id="contact-subject" name="subject" class="form-input"
+                  placeholder="შეტყობინების თემა" />
+              </div>
+              <div class="form-group">
+                <label for="contact-message" class="form-label">შეტყობინება</label>
+                <textarea id="contact-message" name="message" class="form-input form-textarea"
+                  placeholder="დაწერეთ თქვენი შეტყობინება..." rows="5"></textarea>
+                <span class="form-error" id="message-error" role="alert" aria-live="polite"></span>
+              </div>
+              <button type="submit" class="btn btn-primary btn-lg form-submit" id="form-submit-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  aria-hidden="true">
+                  <line x1="22" y1="2" x2="11" y2="13" />
+                  <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                </svg>
+                გაგზავნა
+              </button>
+            </form>
+
+            <div class="form-success" id="form-success" role="status" aria-live="polite" aria-hidden="true">
+              <div class="success-icon" aria-hidden="true">&#9989;</div>
+              <h3 class="success-title">წარმატებით გაიგზავნა!</h3>
+              <p class="success-desc">მადლობა! ჩვენი გუნდი 24 საათის განმავლობაში დაგიკავშირდება.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <a href="#home" class="nav-logo footer-logo" aria-label="TECHNOVA">
+            <span class="logo-icon" aria-hidden="true">&#x2B21;</span>
+            <span class="logo-text">TECH<span class="logo-accent">NOVA</span></span>
+          </a>
+          <p class="footer-tagline">ტექნოლოგია, რომელიც შენს ცხოვრებას ცვლის.</p>
+          <div class="footer-social" aria-label="სოციალური ქსელები">
+            <a href="#" class="social-link" id="social-facebook" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+              </svg>
+            </a>
+            <a href="#" class="social-link" id="social-instagram" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+            </a>
+            <a href="#" class="social-link" id="social-youtube" aria-label="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                aria-hidden="true">
+                <path
+                  d="M22.54 6.42a2.78 2.78 0 00-1.94-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.4 19.54C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 001.94-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z" />
+                <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <nav class="footer-nav-col" aria-label="ნავიგაცია">
+          <h4 class="footer-col-title">ნავიგაცია</h4>
+          <ul class="footer-links">
+            <li><a href="#home" class="footer-link" id="footer-nav-home">მთავარი</a></li>
+            <li><a href="#about" class="footer-link" id="footer-nav-about">ჩვენ შესახებ</a></li>
+            <li><a href="#products" class="footer-link" id="footer-nav-products">პროდუქტები</a></li>
+            <li><a href="#features" class="footer-link" id="footer-nav-features">უპირატესობები</a></li>
+            <li><a href="#contact" class="footer-link" id="footer-nav-contact">კონტაქტი</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-nav-col" aria-label="კატეგორიები">
+          <h4 class="footer-col-title">კატეგორიები</h4>
+          <ul class="footer-links">
+            <li><a href="#products" class="footer-link" id="footer-cat-laptops">ლეპტოპები</a></li>
+            <li><a href="#products" class="footer-link" id="footer-cat-phones">სმარტფონები</a></li>
+            <li><a href="#products" class="footer-link" id="footer-cat-audio">ყურსასმენები</a></li>
+            <li><a href="#products" class="footer-link" id="footer-cat-tablets">ტაბლეტები</a></li>
+            <li><a href="#products" class="footer-link" id="footer-cat-cameras">კამერები</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-nav-col">
+          <h4 class="footer-col-title">სიახლეები</h4>
+          <p class="footer-newsletter-desc">გამოიწერე სიახლეები და მიიღე ექსკლუზიური შეთავაზებები.</p>
+          <div class="newsletter-form">
+            <input type="email" class="newsletter-input" id="newsletter-email" placeholder="ელფოსტა"
+              aria-label="ელფოსტის მისამართი" />
+            <button class="newsletter-btn" id="newsletter-btn" aria-label="გამოწერა">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">&#169; 2026 TECHNOVA. ყველა უფლება დაცულია.</p>
+        <div class="footer-legal">
+          <a href="#" class="footer-legal-link" id="footer-privacy">კონფიდენციალობა</a>
+          <a href="#" class="footer-legal-link" id="footer-terms">პირობები</a>
+          <a href="#" class="footer-legal-link" id="footer-cookies">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-hidden="true">
+    <span class="toast-icon" aria-hidden="true">&#128722;</span>
+    <span class="toast-msg" id="toast-msg">პროდუქტი დამატებულია!</span>
+  </div>
+
+  <!-- Back to top -->
+  <button class="back-to-top" id="back-to-top" aria-label="გვერდის თავზე დაბრუნება">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+      aria-hidden="true">
+      <path d="M18 15l-6-6-6 6" />
+    </svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
